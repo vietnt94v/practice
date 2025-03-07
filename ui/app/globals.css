@@ -19,3 +19,11 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container {
+  @apply mx-auto px-3;
+}
+
+table td {
+  @apply border border-gray-300
+}
