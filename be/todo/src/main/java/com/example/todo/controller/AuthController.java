@@ -30,10 +30,10 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid password");
         }
 
-        if (user.isAccountLocked()) {
+        if (Boolean.FALSE.equals(user.getIsActive())) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account is locked");
         }
 
-        return ResponseEntity.ok("Login succesfully role" + user.getAccountRole());
+        return ResponseEntity.ok("Login successful. Role: " + user.getRole().getRoleName());
     }
 }
